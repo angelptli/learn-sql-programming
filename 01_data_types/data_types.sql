@@ -1,11 +1,11 @@
 USE practice;
 
 CREATE TABLE table_1 (
-	pk INT NOT NULL AUTO_INCREMENT,
-	ch CHAR(100) NULL,
+    pk INT NOT NULL AUTO_INCREMENT,
+    ch CHAR(100) NULL,
     vc VARCHAR(255) NULL,
     date INT NULL,
-	ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     dt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     vb VARBINARY(255) NULL,
     PRIMARY KEY (pk)
@@ -100,7 +100,3 @@ Q: Are the results what your expected?
 A: Yes, the result is "Error Code: 1264. Out of range value for column 'date' at row 1".
    That is because the date column s limited to accepting integers/digits.
 */
-
-
-
-

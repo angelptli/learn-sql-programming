@@ -1,8 +1,8 @@
 USE practice;
 
 CREATE TABLE subway_sub_exp (
-	sub_id INT NOT NULL AUTO_INCREMENT,
-	quantity TINYINT NULL,
+    sub_id INT NOT NULL AUTO_INCREMENT,
+    quantity TINYINT NULL,
     bread CHAR(30) NULL,
     meat VARCHAR(20) NULL,
     price_decimal DECIMAL(6,3) NULL,
@@ -677,7 +677,7 @@ WHERE bread NOT LIKE 'i%e';
 -- Enough with observing subway bread types. Let's see which subs cost about 13 to 14 dollars
 -- Use BETWEEN:
 SELECT
-	bread,
+    bread,
     meat,
     price_decimal / quantity AS price_per_sub
 FROM subway_sub_exp
@@ -695,7 +695,7 @@ WHERE price_decimal / quantity BETWEEN 12.99 AND 15;
 
 -- Use > & < to generate same results as above:
 SELECT
-	bread,
+    bread,
     meat,
     price_decimal / quantity AS price_per_sub
 FROM subway_sub_exp
@@ -714,7 +714,7 @@ WHERE price_decimal / quantity > 12.99 AND price_decimal / quantity < 15;
 -- Are there any subs that cost less than $10?!!
 -- Use NOT BETWEEN:
 SELECT
-	bread,
+    bread,
     meat,
     price_decimal / quantity AS price_per_sub
 FROM subway_sub_exp
@@ -732,7 +732,7 @@ WHERE price_decimal / quantity NOT BETWEEN 10.01 AND 10000;
 
 -- Use > & < to generate same results as above:
 SELECT
-	bread,
+    bread,
     meat,
     price_decimal / quantity AS price_per_sub
 FROM subway_sub_exp

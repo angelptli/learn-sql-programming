@@ -8,7 +8,7 @@ DELIMITER $$
 DROP TABLE IF EXISTS wallet;
 
 CREATE TABLE wallet (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     spare_change DECIMAL(6,2))$$
 DELIMITER ;
 
@@ -18,7 +18,7 @@ DROP PROCEDURE IF EXISTS mula;
 
 CREATE PROCEDURE mula (deposit_1 DECIMAL(6,2), deposit_2 DECIMAL(6,2))
 BEGIN
-	INSERT INTO wallet (spare_change)
+    INSERT INTO wallet (spare_change)
     VALUES (deposit_1), (deposit_2), (deposit_1 + deposit_2);
   
 	SELECT SUM(spare_change)
@@ -58,7 +58,7 @@ DROP FUNCTION IF EXISTS save_up;
 CREATE FUNCTION save_up (save_1 DECIMAL(6,2), save_2 DECIMAL(6,2))
 RETURNS DECIMAL(6,2) DETERMINISTIC
 BEGIN
-	INSERT INTO wallet (spare_change)
+    INSERT INTO wallet (spare_change)
     VALUES (save_1), (save_2), (save_1 + save_2);
     
     RETURN save_1 + save_2;
